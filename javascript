@@ -13,4 +13,5 @@
     be used before its actual declaration.
 =>  Temporal Dead Zone (TDZ) is a term used in the context of variable hoisting in JavaScript. When a variable is
     declared using the keyword 'let' or 'const' in JavaScript, it is not accessible until it has been declared and initialized. The TDZ is the period between the start of a block and the point where a variable is declared and initialized. During this period, any attempt to access the variable will result in a ReferenceError. The TDZ helps enforce the use of best coding practices and helps catch potential bugs before they can cause problems in your code.    
-           
+=>  In JavaScript, shadowing occurs when a variable in an inner scope has the same name as a variable in an outer
+    scope. When this happens, the inner variable takes precedence over the outer variable, effectively "shadowing" it.           
