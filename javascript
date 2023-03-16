@@ -23,3 +23,18 @@
 
 =>  A closure is the combination of a function bundled together (enclosed) with references to its surrounding state
     (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+    eg:- 
+        function x()
+        {
+            var a=10;
+            function y(){
+                console.log(a);
+            }
+            return y;
+        }
+        var z=x();
+        console.log(z());
+        here when we invoke z(),it call y function and find it local scope value of 'a'. then they don't find then also refrece store in the execution then it will check in parent lexical scope and here he find and print 10;
+        they remember where it present. no longer x is exist still they remember the value of x.the function y remember the value of it's lexical scope.
+        that is closure.
