@@ -138,12 +138,71 @@
                 return a+b;
             }         
             const ans=add(1,2);
-            console.log(ans)
+            console.log(ans);
 
             // arrow function
             const add=(a,b)=>a+b;
             const ans=add(1,2);
             console.log(ans)
+
+=>  Currying is a technique in functional programming where a function that takes multiple arguments is transformed into a series of functions that
+    take one argument each. In JavaScript, currying is often used to create more specialized functions from more general ones.
+    Here's an example of a curried function in JavaScript:     
+    eg:-
+        function add(a)
+        {
+            return function(b)
+            {
+                return a+b;
+            }
+        }
+        const ans=add(5)(5);
+        console.log(ans);     
+
+        const myObj=
+        {
+            name:"sourabh",
+            age:28
+        }
+        function findKey(obj)
+        {
+            return function(key)
+            {
+                return obj[key];
+            }
+        }
+        const ans=findKey(myObj)('name')
+        console.log(ans);
+
+        function add(x,y)
+        {
+            console.log(x+y);
+        }
+
+        const added=add.bind(this,2);
+        added(3);
+
+=>  Pure functions are functions that accept an input and returns a value without modifying any outside data. and predectible output.
+    bcoz everytime there is same output.
+    let x=10;
+    function add(x)
+    {
+        console.log(x+1);
+    }        
+    add(5);
+    add(6)
+
+=>  An impure function is a function that contains one or more side effects. It mutates data outside of its lexical scope and does
+    not predictably produce the same output for the same input.  
+    eg:-
+        let count = 0;
+        function increment() {
+        count++;
+        return count;
+        }
+
+        console.log(increment()); // Output: 1
+        console.log(increment()); // Output: 2
 
 
             
