@@ -38,3 +38,80 @@
         here when we invoke z(),it call y function and find it local scope value of 'a'. then they don't find then also refrece store in the execution then it will check in parent lexical scope and here he find and print 10;
         they remember where it present. no longer x is exist still they remember the value of x.the function y remember the value of it's lexical scope.
         that is closure.
+
+=>      function foo()
+        {
+            for(var i=1;i<=5;i++)
+            {
+                function close(i)
+                {
+                    setTimeout(()=>
+                    {
+                        console.log(i)
+                    },1000)
+                }
+                close(i);                
+            }
+        }
+        foo(); 
+
+=>  Function statement & Function declaration:-
+    function sayHello(name) 
+    {
+        console.log("Hello, " + name + "!");
+    }  
+    sayHello("Bob"); // logs "Hello, Bob!"  
+
+=>  Function Expression:-
+    const sayHello=(name)=>
+    {
+        console.log("Hello, " + name + "!");
+    } 
+    sayHello("Bob"); // logs "Hello, Bob!"
+
+=>  Diffrence between Arrow function and Normal Function:-
+    1. Arguments objects are not allowed in arrow function.
+    eg:- 
+            // Normal Function
+            function add(a,b)
+            {
+                console.log(arguments);
+            }              
+            add(10,20); 
+
+            // Arrow function
+            const add=(a,b)=>
+            {
+                console.log(arguments);
+            }   
+            add(10,20);
+
+    2. constructor function are created by normal function, we can't create with arrow function:-
+       eg:-
+                //normal function
+                function Car(name)
+                {
+                    this.brand=name;
+                }
+                const carData=new Car("maruti");
+                console.log(carData);
+
+    3. arrow function do not have thier own this:-
+       Arrow functions in JavaScript do not have their own this binding. Instead, they inherit the this value from the surrounding lexical scope.
+       eg:-        
+            const obj = {
+            name: 'John',
+            age: 30,
+            greet: function() {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            },
+            greetArrow: () => {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            }
+            };
+
+            obj.greet(); // output: "Hello, my name is John and I am 30 years old."
+            obj.greetArrow(); // output: "Hello, my name is undefined and I am undefined years old." because 1st it's find in lexical scope that
+            where is normal function then it's refer to that object. here they don't find function and refers to global object, that's why output
+            is undefined.
+            

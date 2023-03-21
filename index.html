@@ -11,11 +11,16 @@
 </body>
 </html>
 <script>
-    
-//    console.log(b);
-   var a=1
-   let b=2
-   const c=3;
-   var d=4;
-   console.log(b);
+
+let obj=
+{
+    name1:"MI 1",
+    soName:function ()
+    {
+        console.log(this.name1);
+    }
+}
+let foo=obj.soName;
+foo();
+obj.soName();
 </script>
