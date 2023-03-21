@@ -12,15 +12,14 @@
 </html>
 <script>
 
-let obj=
+var name="MI"
+const obj=
 {
-    name1:"MI 1",
-    soName:function ()
+    name:"RCB",
+    printName1:()=>
     {
-        console.log(this.name1);
+        console.log(this.name);
     }
 }
-let foo=obj.soName;
-foo();
-obj.soName();
+obj.printName1();
 </script>

@@ -70,7 +70,8 @@
     sayHello("Bob"); // logs "Hello, Bob!"
 
 =>  Diffrence between Arrow function and Normal Function:-
-    1. Arguments objects are not allowed in arrow function.
+    1. Synntax diffrence.
+    2. Arguments objects are not allowed in arrow function.
     eg:- 
             // Normal Function
             function add(a,b)
@@ -86,7 +87,7 @@
             }   
             add(10,20);
 
-    2. constructor function are created by normal function, we can't create with arrow function:-
+    3. constructor function are created by normal function, we can't create with arrow function:-
        eg:-
                 //normal function
                 function Car(name)
@@ -96,7 +97,7 @@
                 const carData=new Car("maruti");
                 console.log(carData);
 
-    3. arrow function do not have thier own this:-
+    4. arrow function do not have thier own this:-
        Arrow functions in JavaScript do not have their own this binding. Instead, they inherit the this value from the surrounding lexical scope.
        eg:-        
             const obj = {
@@ -114,4 +115,35 @@
             obj.greetArrow(); // output: "Hello, my name is undefined and I am undefined years old." because 1st it's find in lexical scope that
             where is normal function then it's refer to that object. here they don't find function and refers to global object, that's why output
             is undefined.
+
+            var name="MI"
+            const obj=
+            {
+                name:"RCB",
+                printName1:()=>
+                {
+                    console.log(this.name);
+                }
+            }
+            obj.printName1();
+            Here 1st they find their lexical function then refers to object but here is no any normal function so they refers to global.this so
+            output is MI.
+
+    5.  Implicity returned by the arrow function:-
+        arrow function returned single expression but in traditional function we have to use return:-
+        eg:-
+            //traditional function
+            function add(a+b)
+            {
+                return a+b;
+            }         
+            const ans=add(1,2);
+            console.log(ans);
+
+            // arrow function
+            const add=(a,b)=>a+b;
+            const ans=add(1,2);
+            console.log(ans)
+
+
             
