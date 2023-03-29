@@ -225,5 +225,61 @@
             console.log("callback function");
         },1000);
 
+=>  diffrence between event handler and event listner is that by event handle we can only one task and event listner multiple task:-
+    eg:-
+        const button=document.querySelector("#button");
+        button.onClick=()=>
+        {
+            console.log("event handler");
+        }
+
+        button.addEventListner("click",()=> console.log("1st event listner"));
+        button.addEventListner("click",()=> console.log("2nd event listner"));
+
+=>  Browser Api:- setTimeout, DOM, Fetch, Console.    
+
+=>  In JavaScript, a higher-order function is a function that takes one or more functions as arguments or returns a function as its result. 
+    eg:- 
+        const numbers = [1, 2, 3, 4, 5];
+        const square = x => x * x;
+        const squaredNumbers = numbers.map(square); // [1, 4, 9, 16, 25]
+
+=>  Diffrence between forEach & map:-
+    map() and forEach() are both array methods in JavaScript used to iterate over an array, but they have some key differences in their behavior
+    and return value:
+
+    Return value:
+    map() method returns a new array with the same length as the original array, but with the transformed elements, whereas the forEach() method
+    returns undefined.
+
+    Mutability:
+    map() does not modify the original array, whereas forEach() method can modify the original array.
+
+    Usage:
+    map() is typically used when we want to create a new array with modified elements of the original array. On the other hand, forEach() is
+    commonly used when we just want to iterate over the array and perform some operation on each element.
+
+    Here are some examples to illustrate these differences:
+    // Example using map()    
+    const numbers = [1, 2, 3, 4, 5];
+    const doubledNumbers = numbers.map((number) => {
+    return number * 2;
+    });
+    console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+    console.log(numbers); // Output: [1, 2, 3, 4, 5] (Original array is unchanged)
+
+    // Example using forEach()
+    const colors = ['red', 'green', 'blue'];
+
+    colors.forEach((color, index) => {
+    colors[index] = color.toUpperCase();
+    });
+
+    console.log(colors); // Output: ["RED", "GREEN", "BLUE"] (Original array is modified)
+
+
+
+    
+
 
             
